@@ -1,0 +1,23 @@
+# vimkeys
+set editing-mode vi
+
+# show indicator of editing mode in prompt
+#set show-mode-in-prompt on
+
+# customise editing mode indicators
+#set vi-ins-mode-string i
+#set vi-cmd-mode-string c
+
+# cursor matches editing mode
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+
+# up and down search history matching what is already typed
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# one tab does the job of both one and two
+set show-all-if-ambiguous on
+
+# coloured completion
+set colored-stats On
