@@ -60,7 +60,7 @@ super + {_,shift + }q
 
 # toggle gaps
 super + g
-    case "$(bspc config window_gap)" in 0) bspc config window_gap 10 & bspc config border_width 3 ;; *) bspc config window_gap 0 & bspc config border_width 1 ;; esac
+    case "$(bspc config window_gap)" in 0) bspc config window_gap 15 & bspc config border_width 3 ;; *) bspc config window_gap 0 & bspc config border_width 1 ;; esac
 
 # alternate between the tiled and monocle layout
 super + f
