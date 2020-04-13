@@ -14,9 +14,10 @@ alias lsp="pacman -Qett --color=always | less"
 alias SS="sudo systemctl"
 alias ka="killall"
 alias ls='ls --color=auto'
-alias lsa='ls -a --color=auto'
+alias la='ls -A --color=auto'
 alias v='nvim'
 alias g='git'
+alias ga='git add'
 alias gl='git log --all --graph'
 alias gs='git status'
 alias gd='git diff'
