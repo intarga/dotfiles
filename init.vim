@@ -117,7 +117,7 @@ nnoremap ;; ;
     let g:airline_solarized_bg='dark'
 
 " Replace all is aliased to S.
-	nnoremap S :%s//g<Left><Left>
+	nnoremap S :%s//gc<Left><Left><Left>
 
 " Copy selected text to system clipboard (requires gvim/nvim/vim-x11 installed):
 	vnoremap <C-c> "+y
