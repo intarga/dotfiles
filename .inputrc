@@ -21,3 +21,12 @@ set show-all-if-ambiguous on
 
 # coloured completion
 set colored-stats On
+
+# case insensitive completion
+set completion-ignore-case on
+
+# treat '-' and '_' as equivalent for completion
+set completion-map-case on
+
+# remove '/' appended to directories in completion
+set mark-directories off
