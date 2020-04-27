@@ -1,0 +1,29 @@
+auto-reload yes
+show-read-feeds no
+
+browser "w3m"
+
+bind-key j next
+bind-key k prev
+bind-key J next-feed
+bind-key K prev-feed
+bind-key j down article
+bind-key k up article
+bind-key J next article
+bind-key K prev article
+#bind-key d pagedown
+#bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+
+color background white default
+color listnormal white default
+color listfocus white red  standout
+color info red default standout
+color listfocus_unread white red    standout
+color listnormal_unread white default
+
+macro v set browser "mpv"; open-in-browser ; set browser "w3m"
+macro i set browser "feh"; open-in-browser ; set browser "w3m"
+macro f set browser "firefox"; open-in-browser ; set browser "w3m"
