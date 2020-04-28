@@ -16,6 +16,7 @@ bind-key K prev article
 bind-key l open
 bind-key h quit
 bind-key a toggle-article-read
+bind-key L toggle-show-read-feeds
 
 color background white default
 color listnormal white default
