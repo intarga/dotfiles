@@ -1,7 +1,7 @@
 auto-reload yes
 show-read-feeds no
 
-browser "w3m"
+browser "firefox"
 
 bind-key j next
 bind-key k prev
@@ -24,6 +24,5 @@ color info red default standout
 color listfocus_unread white red    standout
 color listnormal_unread white default
 
-macro v set browser "mpv"; open-in-browser ; set browser "w3m"
-macro i set browser "feh"; open-in-browser ; set browser "w3m"
-macro f set browser "firefox"; open-in-browser ; set browser "w3m"
+macro v set browser "mpv"; open-in-browser ; set browser "firefox"
+macro i set browser "feh"; open-in-browser ; set browser "firefox"
