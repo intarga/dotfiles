@@ -23,16 +23,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim'
 Plug 'w0rp/ale'
-
-" Bin?
-Plug 'scrooloose/nerdtree'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'tpope/vim-surround'
-Plug 'jreybert/vimagit'
-Plug 'tpope/vim-fugitive'
-Plug 'LukeSmithxyz/vimling'
-Plug 'tpope/vim-commentary'
-Plug 'chrisbra/colorizer'
 Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
@@ -57,14 +47,6 @@ nnoremap ;; ;
 " Rust.vim
     let g:rustfmt_autosave = 1
 
-" Deoplete Rust
-    let g:deoplete#sources#rust#racer_binary='/home/intarga/.cargo/bin/racer'
-    let g:deoplete#sources#rust#rust_source_path='/home/intarga/rust/rust/src'
-
-" Deoplete Clang
-    let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
-    let g:deoplete#sources#clang#clang_header='/usr/lib/clang'
-
 " Vim Go
 	let g:go_highlight_types = 1
 	let g:go_highlight_fields = 1
@@ -75,15 +57,17 @@ nnoremap ;; ;
 
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
-	inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 	let g:deoplete#enable_smart_case = 1
-	"highlight Pmenu ctermbg=black ctermfg=red guibg=grey
+	inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 	highlight Pmenu ctermbg=0 ctermfg=4 guibg=grey
 	highlight PmenuSel ctermbg=0 ctermfg=1 guifg=#dddd00 guibg=#1f82cd
 	highlight PmenuSbar ctermbg=grey ctermfg=blue guibg=#d6d6d6
-	"highlight Pmenu ctermbg=8 guibg=#606060
-	"highlight PmenuSel ctermbg=1 guifg=#dddd00 guibg=#1f82cd
-	"highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
+    " Rust
+        let g:deoplete#sources#rust#racer_binary='/home/intarga/.cargo/bin/racer'
+        let g:deoplete#sources#rust#rust_source_path='/home/intarga/rust/rust/src'
+    " C
+        let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
+        let g:deoplete#sources#clang#clang_header='/usr/lib/clang'
 
 " Ale
     let g:ale_fixers = {
@@ -100,15 +84,12 @@ nnoremap ;; ;
 
 " Enable autocompletion:
 	set wildmode=longest,list,full
+
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Splits open at the bottom and right.
 	set splitbelow splitright
-
-" Nerd tree
-	map <C-n> :NERDTreeToggle<CR>
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Airline
 	let g:airline_powerline_fonts = 1
