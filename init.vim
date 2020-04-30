@@ -57,7 +57,9 @@ nnoremap ;; ;
 
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
-	let g:deoplete#enable_smart_case = 1
+    call deoplete#custom#option({
+    \ 'smart_case': v:true,
+    \ })
 	inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 	highlight Pmenu ctermbg=0 ctermfg=4 guibg=grey
 	highlight PmenuSel ctermbg=0 ctermfg=1 guifg=#dddd00 guibg=#1f82cd
