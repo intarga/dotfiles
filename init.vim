@@ -44,6 +44,15 @@ set number relativenumber
 nmap ; :
 nnoremap ;; ;
 
+" Autoclosing
+    inoremap " ""<left>
+    inoremap ' ''<left>
+    inoremap ( ()<left>
+    inoremap [ []<left>
+    inoremap { {}<left>
+    inoremap {<CR> {<CR>}<ESC>O
+    inoremap {;<CR> {<CR>};<ESC>O
+
 " Rust.vim
     let g:rustfmt_autosave = 1
 
