@@ -48,22 +48,22 @@ nnoremap ;; ;
     let g:rustfmt_autosave = 1
 
 " Vim Go
-	let g:go_highlight_types = 1
-	let g:go_highlight_fields = 1
-	let g:go_hgihlight_functions = 1
-	let g:go_highlight_function_calls = 1
-	let g:go_highlight_operators = 1
-	let g:go_highlight_extra_types = 1
+    let g:go_highlight_types = 1
+    let g:go_highlight_fields = 1
+    let g:go_hgihlight_functions = 1
+    let g:go_highlight_function_calls = 1
+    let g:go_highlight_operators = 1
+    let g:go_highlight_extra_types = 1
 
 " Deoplete
-	let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_at_startup = 1
     call deoplete#custom#option({
     \ 'smart_case': v:true,
     \ })
-	inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-	highlight Pmenu ctermbg=0 ctermfg=4 guibg=grey
-	highlight PmenuSel ctermbg=0 ctermfg=1 guifg=#dddd00 guibg=#1f82cd
-	highlight PmenuSbar ctermbg=grey ctermfg=blue guibg=#d6d6d6
+    inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+    highlight Pmenu ctermbg=0 ctermfg=4 guibg=grey
+    highlight PmenuSel ctermbg=0 ctermfg=1 guifg=#dddd00 guibg=#1f82cd
+    highlight PmenuSbar ctermbg=grey ctermfg=blue guibg=#d6d6d6
     " Rust
         let g:deoplete#sources#rust#racer_binary='/home/intarga/.cargo/bin/racer'
         let g:deoplete#sources#rust#rust_source_path='/home/intarga/rust/rust/src'
@@ -79,35 +79,35 @@ nnoremap ;; ;
     let g:ale_linters = {
     \   'javascript': ['eslint'],
     \   'css': ['eslint'],
-	\}
+    \}
     let g:ale_linters_explicit = 1
     let g:ale_fix_on_save = 1
     let g:ale_completion_enabled = 1
 
 " Enable autocompletion:
-	set wildmode=longest,list,full
+    set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
-	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Splits open at the bottom and right.
-	set splitbelow splitright
+    set splitbelow splitright
 
 " Airline
-	let g:airline_powerline_fonts = 1
-	let g:airline_skip_empty_sections = 1
-	let g:airline_theme='monochrome'
+    let g:airline_powerline_fonts = 1
+    let g:airline_skip_empty_sections = 1
+    let g:airline_theme='monochrome'
     let g:airline_solarized_bg='dark'
 
 " Replace all is aliased to S.
-	nnoremap S :%s//gc<Left><Left><Left>
+    nnoremap S :%s//gc<Left><Left><Left>
 
 " Copy selected text to system clipboard (requires gvim/nvim/vim-x11 installed):
-	vnoremap <C-c> "+y
-	map <C-p> "+P
+    vnoremap <C-c> "+y
+    map <C-p> "+P
 
 " Automatically deletes all trailing whitespace on save.
-	autocmd BufWritePre * %s/\s\+$//e
+    autocmd BufWritePre * %s/\s\+$//e
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
-	autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
+    autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
