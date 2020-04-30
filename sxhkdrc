@@ -29,6 +29,10 @@ super + shift + p
 # brightness control
 XF86MonBrightness{Down,Up}
     xbacklight -{dec,inc} 5
+ctrl + XF86MonBrightness{Down,Up}
+    xbacklight -{dec,inc} 1
+shift + XF86MonBrightness{Down,Up}
+    xbacklight -{dec,inc} 20
 super + XF86MonBrightnessDown
     xbacklight -set 1
 
