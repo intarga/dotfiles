@@ -44,6 +44,9 @@ set number relativenumber
 nmap ; :
 nnoremap ;; ;
 
+" C
+    set cinoptions+=:0 "stops indentation of case statements
+
 " Autoclosing
     inoremap " ""<left>
     inoremap ' ''<left>
