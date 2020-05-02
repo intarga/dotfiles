@@ -4,15 +4,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Rust
 Plug 'rust-lang/rust.vim'
-Plug 'sebastianmarkow/deoplete-rust'
 
 " Go
 Plug 'fatih/vim-go'
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-
-" C
-Plug 'zchee/deoplete-clang'
 
 " Javascript/react
 Plug 'pangloss/vim-javascript'
@@ -21,9 +15,8 @@ Plug 'mxw/vim-jsx'
 " Misc
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/deoplete.nvim'
-Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -43,6 +36,18 @@ set encoding=utf-8
 set number relativenumber
 nmap ; :
 nnoremap ;; ;
+
+" Colours!
+    " Popups
+    highlight Pmenu ctermbg=0 ctermfg=4 guibg=grey
+    highlight PmenuSel ctermbg=0 ctermfg=1 guifg=#dddd00 guibg=#1f82cd
+    highlight PmenuSbar ctermbg=grey ctermfg=blue guibg=#d6d6d6
+
+    " Gutter
+    highlight SignColumn ctermbg=black
+
+    " Visual Mode
+    highlight Visual ctermbg=grey
 
 " C
     set cinoptions+=:0 "stops indentation of case statements
@@ -67,35 +72,31 @@ nnoremap ;; ;
     let g:go_highlight_operators = 1
     let g:go_highlight_extra_types = 1
 
-" Deoplete
-    let g:deoplete#enable_at_startup = 1
-    call deoplete#custom#option({
-    \ 'smart_case': v:true,
-    \ 'max_list': 10,
-    \ })
-    inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-    highlight Pmenu ctermbg=0 ctermfg=4 guibg=grey
-    highlight PmenuSel ctermbg=0 ctermfg=1 guifg=#dddd00 guibg=#1f82cd
-    highlight PmenuSbar ctermbg=grey ctermfg=blue guibg=#d6d6d6
-    " Rust
-        let g:deoplete#sources#rust#racer_binary='/home/intarga/.cargo/bin/racer'
-        let g:deoplete#sources#rust#rust_source_path='/home/intarga/rust/rust/src'
-    " C
-        let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
-        let g:deoplete#sources#clang#clang_header='/usr/lib/clang'
+" Coc
+    " Tab completion cycling
+    inoremap <silent><expr> <TAB>
+          \ pumvisible() ? "\<C-n>" :
+          \ <SID>check_back_space() ? "\<TAB>" :
+          \ coc#refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" Ale
-    let g:ale_fixers = {
-    \   'javascript': ['prettier', 'eslint'],
-    \   'css': ['prettier', 'eslint'],
-    \}
-    let g:ale_linters = {
-    \   'javascript': ['eslint'],
-    \   'css': ['eslint'],
-    \}
-    let g:ale_linters_explicit = 1
-    let g:ale_fix_on_save = 1
-    let g:ale_completion_enabled = 1
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+    " Return completion confirmation
+    if exists('*complete_info')
+        inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+    else
+        inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    endif
+
+    " GoTo code navigation.
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
 
 " Enable autocompletion:
     set wildmode=longest,list,full
