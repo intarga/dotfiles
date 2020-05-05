@@ -61,6 +61,9 @@ nnoremap ;; ;
     inoremap {<CR> {<CR>}<ESC>O
     inoremap {;<CR> {<CR>};<ESC>O
 
+" C
+    set cinoptions+=:0 "stops indentation of case statements
+
 " Rust.vim
     let g:rustfmt_autosave = 1
 
@@ -73,6 +76,8 @@ nnoremap ;; ;
     let g:go_highlight_extra_types = 1
 
 " Coc
+    set updatetime=100 "affects swp files too...
+
     " Tab completion cycling
     inoremap <silent><expr> <TAB>
           \ pumvisible() ? "\<C-n>" :
