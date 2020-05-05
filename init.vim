@@ -1,4 +1,4 @@
-let mapleader =","
+let mapleader =" "
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -49,8 +49,12 @@ nnoremap ;; ;
     " Visual Mode
     highlight Visual ctermbg=grey
 
-" C
-    set cinoptions+=:0 "stops indentation of case statements
+" Buffer Navigation
+    noremap <Leader>bb :buffers<CR>:buffer<Space>
+    noremap <Leader>bn :bn<CR>
+    noremap <Leader>bp :bp<CR>
+    noremap <Leader>bd :bdelete<CR>
+    noremap <Leader>o  :edit<Space>
 
 " Autoclosing
     inoremap " ""<left>
