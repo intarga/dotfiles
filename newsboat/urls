@@ -1,4 +1,5 @@
 # News
+https://nixos.org/news-rss.xml "News"                                                #NixOSNews
 https://www.archlinux.org/feeds/news/ "News"                                         #ArchLinux
 http://feeds.arstechnica.com/arstechnica/index "News"                                #ArsTechnica
 https://hnrss.org/frontpage?comments=25 "News"                                       #HackerNews
@@ -8,6 +9,9 @@ vihart.com/feed "Blogs"                                                         
 https://feeds.feedburner.com/steveklabnik/words "Blogs"                              #SteveKlabnik
 https://lukesmith.xyz/rss.xml "Blogs"                                                #LukeSmith
 https://drewdevault.com/feed.xml "Blogs"                                             #DrewDevault
+https://hypercritical.co/feeds/main "Blogs"                                          #Hypercritical
+https://marco.org/rss "Blogs"                                                        #MarcoArment
+https://nixos.org/blogs.xml "Blogs"                                                  #NixOSBlog
 
 #Comics
 https://xkcd.com/rss.xml "Comics"                                                    #xkcd
@@ -34,6 +38,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCByBOwwOU5tKddYpsrHiUUw "Vi
 # Vids2
 https://www.youtube.com/feeds/videos.xml?channel_id=UClfEht64_NrzHf8Y0slKEjw "Vids2" #AlternateHistoryHub
 https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "Vids2" #BrodieRobertson
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSW5DqTyfOI9sUvnFoCjBlQ "Vids2" #BurkeLibbey(Nix)
 https://www.youtube.com/feeds/videos.xml?channel_id=UCPDXXXJj9nax0fr0Wfc048g "Vids2" #CollegeHumor
 https://www.youtube.com/feeds/videos.xml?channel_id=UCJmlCcnfMlyPA2oSbb072QA "Vids2" #Curio
 https://www.youtube.com/feeds/videos.xml?channel_id=UC3U5HoHRrkWNSTnaaXMYrNA "Vids2" #Ellbat

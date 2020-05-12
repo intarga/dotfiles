@@ -15,7 +15,7 @@ bind-key K prev article
 #bind-key u pageup
 bind-key l open
 bind-key h quit
-bind-key a toggle-article-read
+bind-key n toggle-article-read
 bind-key L toggle-show-read-feeds
 
 color background white default
