@@ -29,6 +29,7 @@ alias tr='transmission-remote'
 alias trwatch='~/scripts/trwatch.sh'
 alias rs='redshift -l 59.9:10.7 -t 5700:3600 -g 0.8 -m randr -r &'
 alias krs='killall redshift'
+aliad icat='kitty +kitten icat'
 
 #Prompt
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\[$(tput setaf 1)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 1)\]\h\[$(tput setaf 4)\]>\W\[$(tput setaf 1)\]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
