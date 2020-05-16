@@ -134,3 +134,7 @@ nnoremap ;; ;
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
     autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
+
+" HTML commenting
+    noremap <Leader>hc I<!--<ESC>A--><ESC>
+    noremap <Leader>hu I<ESC>l4x$xxx
