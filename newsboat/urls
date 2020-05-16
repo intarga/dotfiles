@@ -5,6 +5,8 @@ http://feeds.arstechnica.com/arstechnica/index "News"                           
 https://hnrss.org/frontpage?comments=25 "News"                                       #HackerNews
 
 # Blogs
+http://ingrids.space/index.xml "Blogs"                                               #MINE!!!
+http://www.hobson.space/index.xml "Blogs"                                            #HobsonSpace
 vihart.com/feed "Blogs"                                                              #Vihart
 https://feeds.feedburner.com/steveklabnik/words "Blogs"                              #SteveKlabnik
 https://lukesmith.xyz/rss.xml "Blogs"                                                #LukeSmith
