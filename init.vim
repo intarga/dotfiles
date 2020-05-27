@@ -50,11 +50,12 @@ nnoremap ;; ;
     highlight Visual ctermbg=grey
 
 " Buffer Navigation
-    noremap <Leader>bb :buffers<CR>:buffer<Space>
-    noremap <Leader>bn :bn<CR>
-    noremap <Leader>bp :bp<CR>
-    noremap <Leader>bd :bdelete<CR>
-    noremap <Leader>o  :edit<Space>
+    noremap <Leader>b     :buffers<CR>:buffer<Space>
+    noremap <Tab>         :bn<CR>
+    noremap <Leader><Tab> :bp<CR>
+    noremap <Leader>d     :bdelete<CR>
+    noremap <Leader>o     :edit<Space>
+    noremap <Leader>h     :set hidden<CR>
 
 " Autoclosing
     inoremap " ""<left>
