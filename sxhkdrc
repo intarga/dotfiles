@@ -39,6 +39,7 @@ XF86MonBrightness{Down,Up}
     `brightnessctl | grep -Eo "[0-9]+%"`
 
 # volume control
+#    pamixer {-d 5, -i 5, -t}
 XF86Audio{LowerVolume,RaiseVolume,Mute}
     amixer -D pulse sset Master {5%-, 5%+, 0%} ; \
     notify-send -h string:x-dunst-stack-tag:volume "Volume" \
@@ -73,7 +74,7 @@ super + {_,shift + }q
 # toggle gaps
 super + g
     case "$(bspc config window_gap)" in \
-    0) bspc config window_gap 15 ;; \
+    0) bspc config window_gap 30 ;; \
     *) bspc config window_gap 0 ;; esac
 
 # toggle bar

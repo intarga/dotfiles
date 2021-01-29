@@ -34,6 +34,10 @@ alias rs='redshift -l 59.9:10.7 -t 5700:3600 -g 0.8 -m randr -r &'
 alias krs='killall redshift'
 alias icat='kitty +kitten icat'
 
+#Aliases Pexip
+alias vpn-connect='sudo vpnc /etc/vpnc/pexipfortinetvpnuk.conf'
+alias vpn-disconnect='sudo vpnc-disconnect'
+
 #Prompt
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\[$(tput setaf 1)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 1)\]\h\[$(tput setaf 4)\]>\W\[$(tput setaf 1)\]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
