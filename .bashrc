@@ -11,6 +11,8 @@ shopt -s autocd #Allows you to cd into directory merely by typing the directory 
 alias sdn="sudo shutdown now"
 alias p='sudo pacman'
 alias lsp="pacman -Qett --color=always | less"
+alias ai="sudo apt install"
+alias asn="apt search --names-only"
 alias SS="sudo systemctl"
 alias ka="killall"
 alias ls='ls --color=auto --group-directories-first'
@@ -34,3 +36,8 @@ alias icat='kitty +kitten icat'
 
 #Prompt
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\[$(tput setaf 1)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 1)\]\h\[$(tput setaf 4)\]>\W\[$(tput setaf 1)\]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+export PATH="${PATH}:${HOME}/.local/bin/"

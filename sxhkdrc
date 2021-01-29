@@ -7,8 +7,10 @@ super + Return
 	kitty
 
 # program launcher
-super + @space
-    rofi -show drun -theme ~/.cache/wal/rofi-theme.rasi
+#rofi -show drun -theme ~/.cache/wal/rofi-theme-new.rasi
+#super + @space
+super + space
+    rofi -show drun
 
 # emoji picker
 super + e

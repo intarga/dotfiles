@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # refresh colourscheme
-feh --bg-fill "${HOME}/config/wallpapers/oktomi-jaya-2EzSfkFLOmw-unsplash.jpg" &
+feh --bg-fill "${HOME}/dotfiles/wallpapers/oktomi-jaya-2EzSfkFLOmw-unsplash.jpg" &
 wal -R &
 
 . "${HOME}/.cache/wal/colors.sh"
@@ -13,6 +13,8 @@ bspc config focused_border_color "$color1"
 killall sxhkd ; sxhkd &
 killall dunst ; dunst &
 #killall compton ; compton &
+#killall redshift ; redshift -l 59.9:10.7 -t 5700:3600 -g 0.8 -m randr -r &
+killall redshift ; redshift -l 59.9:10.7 -t 5700:2700 -g 0.8 -m randr -r &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
