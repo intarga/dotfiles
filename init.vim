@@ -17,6 +17,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -107,6 +109,11 @@ nnoremap ;; ;
     nmap <silent> gy <Plug>(coc-type-definition)
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
+
+" Fzf
+    nnoremap <Leader>f :Files<Space>.<CR>
+    nnoremap <Leader>a :Ag<Space>
+    nnoremap <Leader>r :Rg<Space>
 
 " Enable autocompletion:
     set wildmode=longest,list,full
