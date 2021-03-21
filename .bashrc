@@ -44,4 +44,8 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\[$(tput setaf 1)\]\u\[$(tput set
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
+export PATH="${PATH}:/usr/local/go/bin"
 export PATH="${PATH}:${HOME}/.local/bin/"
+export PATH="${PATH}:${HOME}/go/bin/"
+
+source "$HOME/.cargo/env"
