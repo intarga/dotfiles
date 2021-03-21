@@ -1,3 +1,5 @@
+" PLEASE NOTE: This file is deprecated, my current nvim config is in a
+" separate repo, this one remains for reference
 let mapleader =" "
 
 call plug#begin('~/.config/nvim/plugged')
@@ -33,7 +35,7 @@ highlight CursorLineNr ctermfg=red
 set nocompatible
 filetype plugin on
 syntax on
-highlight Statement ctermfg=white
+highlight Statement ctermfg=red cterm=bold
 set encoding=utf-8
 set number relativenumber
 nmap ; :
