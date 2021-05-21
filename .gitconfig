@@ -1,0 +1,5 @@
+[user]
+	name = Ingrid Rebecca Abraham
+	email = git@ingrids.email
+[pull]
+	rebase = true
