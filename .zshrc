@@ -1,6 +1,6 @@
 # Created by newuser for 5.8
 
-PROMPT="%B%F{red}%n%F{blue}@%F{red}%m%F{blue}>%~%F{white}$%b "
+PROMPT="%B%F{red}%n%F{blue}@%F{red}%m%F{blue}>%~%F{magenta}$%b "
 
 #Options
 setopt autocd
