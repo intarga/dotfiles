@@ -1,0 +1,44 @@
+"attribute" = "{color2}"
+"keyword" = {{ fg = "{color1}", modifiers = ["bold"] }}
+"keyword.directive" = "{color10}"
+"namespace" = "{color2}"
+"punctuation" = "{color13}"
+"punctuation.delimiter" = "{color13}"
+"operator" = {{ fg = "{color1}", modifiers = ["bold"] }}
+"special" = "{color5}"
+"property" = "{color6}"
+"variable" = "{color4}"
+"variable.parameter" = "{color6}"
+"type" = {{ fg = "{color4}", modifiers = ["bold"] }}
+"type.builtin" = "{color2}"
+"constructor" = {{ fg = "{color2}", modifiers = ["bold"] }}
+"function" = {{ fg = "{color6}", modifiers = ["bold"] }}
+"function.macro" = {{ fg = "{color3}", modifiers = ["bold"] }}
+"function.builtin" = "{color6}"
+"comment" = "{color4}"
+"variable.builtin" = "{color3}"
+"constant" = "{color3}"
+"constant.builtin" = "{color3}"
+"string" = "{color1}"
+"number" = "{color1}"
+"escape" = {{ fg = "{color1}", modifiers = ["bold"] }}
+"label" = "{color5}"
+
+"module" = "{color2}"
+
+"ui.background" = {{ bg = "{background}" }}
+"ui.linenr" = {{ fg = "#bbbbbb" }}
+"ui.statusline" = {{ bg = "{color0}" }}
+"ui.popup" = {{ bg = "{color0}" }}
+"ui.window" = {{ bg = "{color8}" }}
+"ui.help" = {{ bg = "{color8}", fg = "{foreground}" }}
+
+"ui.text" = {{ fg = "{color12}" }}
+"ui.text.focus" = {{ fg = "{foreground}", modifiers= ["bold"] }}
+
+"ui.menu.selected" = {{ fg = "{color1}", bg = "{color0}" }}
+
+"warning" = "{color3}"
+"error" = "{color1}"
+"info" = "{color2}"
+"hint" = "{color4}"
