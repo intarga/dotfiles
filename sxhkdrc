@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # program launcher
 #rofi -show drun -theme ~/.cache/wal/rofi-theme-new.rasi
