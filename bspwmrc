@@ -28,5 +28,5 @@ bspc config single_monocle       true
 #bspc config ignore_ewmh_fullscreen enter
 
 # window rules
-bspc rule -a Signal desktop='^3'
+# bspc rule -a Signal desktop='^3'
 bspc rule -a Zathura state=tiled
