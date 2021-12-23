@@ -70,6 +70,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmen
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *statcmd[]  = { "/home/intarga/scripts/notify-sysinfo.sh", NULL };
 static const char *sleepcmd[]  = { "systemctl", "suspend", NULL };
+static const char *screenshotcmd[]  = { "scrot", "/home/intarga/Pictures/%Y-%m-%d_$wx$h.png", NULL };
 
 static const char *audiomtcmd[]  = { "amixer", "-D", "pulse", "sset", "Master", "0%", NULL };
 static const char *audiodwncmd[]  = { "amixer", "-D", "pulse", "sset", "Master", "5%-", NULL };
@@ -84,6 +85,7 @@ static Key keys[] = {
 	{ MODKEY,               XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,               XK_d,      spawn,          {.v = statcmd } },
 	{ MODKEY,               XK_s,      spawn,          {.v = sleepcmd } },
+	{ MODKEY,               XK_p,      spawn,          {.v = screenshotcmd } },
     //bar
 	{ MODKEY,               XK_b,      togglebar,      {0} },
     //controls
