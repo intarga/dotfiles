@@ -28,7 +28,7 @@ ctrl + shift + space
 
 # datetime/battery notification
 super + d
-    bash ~/scripts/notify-sysinfo.sh
+    ~/scripts/notify-sysinfo.sh
 
 # screenshot
 super + shift + p
