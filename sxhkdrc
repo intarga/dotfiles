@@ -52,6 +52,10 @@ XF86Audio{LowerVolume,RaiseVolume,Mute}
 XF86Audio{Play,Prev,Next}
     playerctl {play-pause,previous,next}
 
+# change x keyboard language
+shift + space
+    ~/scripts/change-lang.sh
+
 # compositor stop/start
 super + c
     killall compton
