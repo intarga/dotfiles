@@ -13,6 +13,6 @@ killall redshift ; redshift -l 59.9:10.7 -t 5700:2700 -g 0.8 -m randr -r &
 killall slstatus ; slstatus &
 
 # applications
-firefox &
-signal-desktop &
+# firefox &
+# signal-desktop &
 #slack &
