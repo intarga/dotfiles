@@ -105,8 +105,12 @@ super + {t,shift + t,s}
 # set the node flags
 #super + ctrl + {m,x,y,z}
 #	bspc node -g {marked,locked,sticky,private}
-super + ctrl + s
-	bspc node -g sticky
+super + ctrl + {s,h}
+	bspc node -g {sticky,hidden}
+
+# unhide windows in the current desktop
+super + ctrl + shift + h
+    while bspc node any.hidden.window -g hidden=off; do :; done
 
 #
 # focus/swap
