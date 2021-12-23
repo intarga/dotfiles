@@ -18,7 +18,7 @@ killall redshift ; redshift -l 59.9:10.7 -t 5700:2700 -g 0.8 -m randr -r &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc config border_width         3
+bspc config border_width         4
 bspc config window_gap          15
 
 bspc config split_ratio          0.5
