@@ -90,7 +90,7 @@ super + y
 
 # swap the current node and the biggest node
 super + m
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 #
 # state/flags
@@ -122,7 +122,7 @@ super + {p,b,comma,period}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }Tab
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.leaf
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
