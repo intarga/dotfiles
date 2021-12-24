@@ -17,7 +17,7 @@ elif [ $state = "Discharging" ]; then
     else
         icon=""
     fi
-elif [ $state = "Charged" ]; then
+elif [ $state = "Full" ]; then
     icon=""
 else
     icon="?"
