@@ -2,10 +2,12 @@
   all: unset; //Unsets everything so you can style everything from scratch
 }
 
+@import "/home/intarga/.cache/wal/colors.scss";
+
 //Global Styles
 .bar {
   background-color: #000000;
-  color: #b0b4bc;
+  color: $color0;
   padding: 10px;
   font-family: "Iosevka Slab";
   font-weight: 900;
@@ -15,24 +17,19 @@
     font-family: "FontAwesome";
 }
 
-@import "/home/intarga/.cache/wal/colors.scss";
-
 .workspaces {
   font-size: 35px;
 
   .occupied {
     padding-top: 10px;
-    color: $color4;
   }
 
   .focused {
     padding-top: 10px;
-    color: $color5;
   }
 
   .urgent {
     padding-top: 10px;
-    color: $color2;
   }
 
   .empty {
