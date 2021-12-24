@@ -1,0 +1,44 @@
+(defwidget bar []
+  (box :orientation "v"
+    (workspaces)
+    (box :orientation "v"
+         :valign "end"
+      (battery)
+      (time))))
+
+(defwidget workspaces []
+  (literal :content workspaces_listen))
+
+(defwidget time []
+  (box :orientation "v"
+       :valign "end"
+       :space-evenly false
+       year month day (label :text "~") hour min sec))
+
+(defwidget battery []
+  (literal :content battery :valign "end"))
+
+(deflisten workspaces_listen "./scripts/workspaces.sh")
+
+(defpoll hour :interval "1s" "date +%H")
+(defpoll min  :interval "1s" "date +%M")
+(defpoll sec  :interval "1s" "date +%S")
+
+; (defpoll day_word :interval "10m" "date +%a | tr [:upper:] [:lower:]")
+(defpoll day      :interval "10m" "date +%d")
+(defpoll month    :interval "1h"  "date +%m")
+(defpoll year     :interval "1h"  "date +%y")
+
+(defpoll battery :interval "1s" "./scripts/battery.sh")
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "53"
+                      :height "100%"
+                      :anchor "left center")
+  (bar))
+
+; vi: ft=fennel

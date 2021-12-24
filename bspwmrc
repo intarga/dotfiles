@@ -16,7 +16,7 @@ killall dunst ; dunst &
 #killall redshift ; redshift -l 59.9:10.7 -t 5700:3600 -g 0.8 -m randr -r &
 killall redshift ; redshift -l 59.9:10.7 -t 5700:2700 -g 0.8 -m randr -r &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 0 1 2 3 4 5 6 7 8 9
 
 bspc config border_width         4
 bspc config window_gap          15

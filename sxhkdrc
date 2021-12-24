@@ -78,6 +78,12 @@ super + g
     0) bspc config window_gap 15 ;; \
     *) bspc config window_gap 0 ;; esac
 
+# toggle bar
+super + b
+    case "$(bspc config left_padding)" in \
+    0) bspc config left_padding 53 ; eww open bar ;; \
+    *) bspc config left_padding 0 ; eww close bar ;; esac
+
 # alternate between the tiled and monocle layout
 super + f
 	bspc desktop -l next
