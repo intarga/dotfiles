@@ -21,8 +21,6 @@ super + Escape
 # dismiss notifications
 ctrl + space
     dunstctl close
-ctrl + shift + space
-    dunstctl close-all
 
 # datetime/battery notification
 super + d
