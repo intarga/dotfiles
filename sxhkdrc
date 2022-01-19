@@ -79,7 +79,7 @@ super + g
 # toggle bar
 super + b
     case "$(bspc config left_padding)" in \
-    0) bspc config left_padding 53 ; eww open bar ;; \
+    0) bspc config left_padding 27 ; eww open bar ;; \
     *) bspc config left_padding 0 ; eww close bar ;; esac
 
 # alternate between the tiled and monocle layout

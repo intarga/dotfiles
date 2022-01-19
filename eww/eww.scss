@@ -8,7 +8,7 @@
 .bar {
   background-color: #000000;
   color: $color0;
-  padding: 10px;
+  padding: 4px;
   font-family: "Iosevka Slab";
   font-weight: 900;
 }
@@ -18,22 +18,22 @@
 }
 
 .workspaces {
-  font-size: 35px;
+  font-size: 20px;
 
   .occupied {
-    padding-top: 10px;
+    padding-top: 4px;
   }
 
   .focused {
-    padding-top: 10px;
+    padding-top: 4px;
   }
 
   .urgent {
-    padding-top: 10px;
+    padding-top: 4px;
   }
 
   .empty {
-    padding-top: 10px;
+    padding-top: 4px;
     color: #000;
   }
 

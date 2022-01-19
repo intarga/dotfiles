@@ -36,7 +36,7 @@
   :windowtype "dock"
   :geometry (geometry :x "0%"
                       :y "0%"
-                      :width "53"
+                      :width "27"
                       :height "100%"
                       :anchor "left center")
   (bar))
