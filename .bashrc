@@ -10,6 +10,7 @@ alias sdn="sudo shutdown now"
 alias p='sudo pacman'
 alias lsp="pacman -Qett --color=always | less"
 alias ai="sudo apt install"
+alias au="sudo apt update && sudo apt upgrade"
 alias asn="apt search --names-only"
 alias SS="sudo systemctl"
 alias ka="killall"
