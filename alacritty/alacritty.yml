@@ -41,6 +41,6 @@ font:
   size: 14.5
 
 shell:
-  program: /bin/zsh
+  program: /bin/bash
 #  args:
 #    - --login
