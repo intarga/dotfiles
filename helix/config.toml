@@ -20,6 +20,12 @@ mode.select = "SELECT"
 [editor.indent-guides]
 render = true
 
+[editor.gutters]
+layout = ["diagnostics", "line-numbers", "spacer", "diff"]
+
+[editor.gutters.line-numbers]
+min-width = 1
+
 [editor.soft-wrap]
 enable = true
 
