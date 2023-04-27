@@ -2,6 +2,7 @@ theme = "ingrid2"
 
 [editor]
 line-number = "relative"
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"

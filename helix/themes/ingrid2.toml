@@ -49,6 +49,9 @@
 "ui.cursorline" = { bg = "light-hl" }
 "ui.statusline" = { fg = "black", bg = "light-hl" }
 "ui.statusline.inactive" = { fg = "dark-blue", bg = "light-hl" }
+"ui.statusline.normal" = { fg = "white", bg = "dark-blue", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "white", bg = "dark-magenta", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "white", bg = "dark-green", modifiers = ["bold"] }
 "ui.popup" = { fg = "dark-blue", bg = "light-hl" }
 "ui.window" = { bg = "dark-hl" }
 "ui.help" = { bg = "dark-hl", fg = "black" }
