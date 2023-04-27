@@ -3,19 +3,21 @@
 "attribute" = "green"
 "keyword" = { fg = "red", modifiers = ["bold"] }
 "keyword.directive" = "dark-green"
-"namespace" = "green"
+"keyword.function" = "cyan"
+"keyword.storage.modifier" = { fg = "red", modifiers = ["italic"] }
+"namespace" = "dark-cyan"
 "punctuation" = "dark-magenta"
 "punctuation.delimiter" = "dark-magenta"
 "operator" = { fg = "red", modifiers = ["bold"] }
 "special" = "magenta"
 "variable.other.member" = "cyan"
-"variable" = "blue"
+"variable" = "dark-cyan"
 "variable.parameter" = "cyan"
-"type" = { fg = "blue", modifiers = ["bold"] }
+"type" = "green"
 "type.builtin" = "green"
 "constructor" = { fg = "green", modifiers = ["bold"] }
 "function" = { fg = "cyan", modifiers = ["bold"] }
-"function.macro" = { fg = "yellow", modifiers = ["bold"] }
+"function.macro" = { fg = "magenta", modifiers = ["bold", "italic"] }
 "function.builtin" = "cyan"
 "comment" = "blue"
 "variable.builtin" = "yellow"
@@ -26,7 +28,7 @@
 "constant.character.escape" = { fg = "red", modifiers = ["bold"] }
 "label" = "magenta"
 
-"module" = "green"
+"module" = "dark-cyan"
 
 # TODO
 "markup.heading" = "blue"
