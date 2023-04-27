@@ -57,6 +57,7 @@
 "ui.popup" = { fg = "dark-blue", bg = "light-hl" }
 "ui.window" = { bg = "dark-hl" }
 "ui.help" = { bg = "dark-hl", fg = "black" }
+"ui.virtual.indent-guide" = "light-hl"
 
 "ui.text" = { fg = "dark-blue" }
 "ui.text.focus" = { fg = "black", modifiers= ["bold"] }
