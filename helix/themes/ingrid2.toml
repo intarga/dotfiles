@@ -46,7 +46,7 @@
 "diff.minus" = "red"
 
 "ui.background" = { bg = "white" }
-"ui.linenr" = { fg = "dark-hl" }
+"ui.linenr" = { fg = "gray" }
 "ui.linenr.selected" = { fg = "red", modifiers = ["bold"] }
 "ui.cursorline" = { bg = "light-hl" }
 "ui.statusline" = { fg = "black", bg = "light-hl" }
@@ -99,3 +99,4 @@ other-yellow = "#F2CC60"
 
 black = "#250E07"
 white = "#FFFCFD"
+gray = "#BBBBBB"
