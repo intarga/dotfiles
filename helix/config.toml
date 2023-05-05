@@ -22,7 +22,7 @@ mode.select = "SELECT"
 render = true
 
 [editor.gutters]
-layout = ["diagnostics", "line-numbers", "spacer", "diff"]
+layout = ["diff", "line-numbers", "spacer"]
 
 [editor.gutters.line-numbers]
 min-width = 1
