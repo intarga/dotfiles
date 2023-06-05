@@ -3,6 +3,7 @@ theme = "ingrid2"
 [editor]
 line-number = "relative"
 color-modes = true
+idle-timeout = 0
 
 [editor.cursor-shape]
 insert = "bar"
