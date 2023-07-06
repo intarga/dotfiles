@@ -35,5 +35,5 @@ enable = true
 [keys.normal]
 ";" = "command_mode"
 
-[keys.normal.","]
+[keys.normal."space"]
 q = ":buffer-close"
