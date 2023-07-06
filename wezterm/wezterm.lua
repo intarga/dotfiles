@@ -33,6 +33,8 @@ config.window_padding = {
 
 config.use_fancy_tab_bar = false
 
+config.window_decorations = "RESIZE"
+
 config.colors = {
   tab_bar = {
     background = '#F3EAE9',
