@@ -66,6 +66,9 @@ config.colors = {
     },
   },
 }    
+
+config.check_for_updates = false
+config.show_update_window = false
   
 -- and finally, return the configuration to wezterm
 return config
