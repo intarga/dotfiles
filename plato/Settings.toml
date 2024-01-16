@@ -1,0 +1,134 @@
+selected-library = 0
+keyboard-layout = "English"
+frontlight = false
+wifi = false
+inverted = false
+sleep-cover = false
+auto-share = false
+button-scheme = "natural"
+auto-suspend = 30.0
+auto-power-off = 3.0
+time-format = "%H:%M"
+date-format = "%A, %B %-d, %Y"
+external-urls-queue = "bin/article_fetcher/urls.txt"
+
+[[libraries]]
+name = "On Board"
+path = "/mnt/onboard"
+mode = "database"
+sort-method = "status"
+first-column = "title-and-author"
+second-column = "progress"
+thumbnail-previews = true
+
+[[libraries.hooks]]
+path = "Articles"
+program = "bin/article_fetcher/article_fetcher"
+sort-method = "added"
+first-column = "title-and-author"
+second-column = "progress"
+
+[[libraries]]
+name = "Removable"
+path = "/mnt/sd"
+mode = "database"
+sort-method = "opened"
+first-column = "title-and-author"
+second-column = "progress"
+thumbnail-previews = true
+
+[[libraries]]
+name = "Dropbox"
+path = "/mnt/onboard/.kobo/dropbox"
+mode = "database"
+sort-method = "opened"
+first-column = "title-and-author"
+second-column = "progress"
+thumbnail-previews = true
+
+[[libraries]]
+name = "KePub"
+path = "/mnt/onboard/.kobo/kepub"
+mode = "database"
+sort-method = "opened"
+first-column = "title-and-author"
+second-column = "progress"
+thumbnail-previews = true
+
+[intermissions]
+suspend = "cover:"
+power-off = "logo:"
+share = "logo:"
+
+[home]
+address-bar = false
+navigation-bar = true
+max-levels = 3
+max-trash-size = 33554432
+
+[reader]
+finished = "close"
+south-east-corner = "go-to-page"
+bottom-right-gesture = "toggle-dithered"
+south-strip = "toggle-bars"
+west-strip = "previous-page"
+east-strip = "next-page"
+strip-width = 0.6000000238418579
+corner-width = 0.4000000059604645
+font-path = "/mnt/onboard/fonts"
+font-family = "Nunito"
+font-size = 7.0
+min-font-size = 4.5
+max-font-size = 16.5
+text-align = "justify"
+margin-width = 8
+min-margin-width = 0
+max-margin-width = 10
+line-height = 1.399999976158142
+continuous-fit-to-width = true
+ignore-document-css = false
+dithered-kinds = ["jpeg", "jpg", "png", "cbz"]
+
+[reader.paragraph-breaker]
+hyphen-penalty = 50
+stretch-tolerance = 1.2599999904632568
+
+[reader.refresh-rate]
+regular = 8
+inverted = 2
+
+[import]
+unshare-trigger = true
+startup-trigger = true
+sync-metadata = true
+metadata-kinds = ["djvu", "epub", "pdf"]
+allowed-kinds = ["oxps", "mobi", "xps", "fb2", "djvu", "cbz", "pdf", "epub", "txt"]
+
+[dictionary]
+margin-width = 4
+font-size = 9.0
+
+[sketch]
+save-path = "Sketches"
+notify-success = true
+
+[sketch.pen]
+size = 2
+color = 0
+dynamic = true
+amplitude = 4.0
+min-speed = 0.0
+max-speed = 3000.0
+
+[calculator]
+font-size = 8.0
+margin-width = 2
+history-size = 4096
+
+[battery]
+warn = 10.0
+power-off = 3.0
+
+[frontlight-levels]
+intensity = 3.0481810569763184
+warmth = 6.391347408294678
