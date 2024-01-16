@@ -32,6 +32,12 @@ min-width = 1
 [editor.soft-wrap]
 enable = true
 
+[editor.whitespace.render]
+newline = "all"
+
+[editor.whitespace.characters]
+newline = "·"
+
 [keys.normal]
 ";" = "command_mode"
 
