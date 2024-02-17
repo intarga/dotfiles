@@ -3,5 +3,17 @@
 	email = git@ingrids.email
 [pull]
 	rebase = true
+[fetch]
+	prune = true
 [init]
     defaultBranch = trunk
+[branch]
+	sort = -committerdate
+[commit]
+	verbose = true
+[diff]
+	algorithm = histogram
+[merge]
+	conflictstyle = zdiff3
+[interactive]
+	singleKey = true
