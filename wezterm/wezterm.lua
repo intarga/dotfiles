@@ -16,7 +16,7 @@ end
 -- config.color_scheme = '3024 (light) (terminal.sexy)'
 config.color_scheme = 'alnj'
 
-config.default_prog = { '/bin/bash' }
+config.default_prog = { '/opt/homebrew/bin/nu' }
 
 config.font = wezterm.font 'Iosevka Extended'
 
