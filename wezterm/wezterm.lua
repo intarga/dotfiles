@@ -18,7 +18,8 @@ config.color_scheme = 'alnj'
 
 config.default_prog = { '/opt/homebrew/bin/nu' }
 
-config.font = wezterm.font 'Iosevka Extended'
+-- config.font = wezterm.font 'Iosevka Extended'
+config.font = wezterm.font 'Iosevka'
 
 config.font_size = 16.0
 
