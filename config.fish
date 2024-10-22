@@ -100,4 +100,18 @@ if status is-interactive
 
     # enable vi key bindings
     set -g fish_key_bindings fish_vi_key_bindings
+
+    # abbreviations
+    abbr --add e hx
+    abbr --add g git
+    abbr --add gs git status
+    abbr --add gd git diff
+    abbr --add ga git add
+    abbr --add gl git log --all --graph
+
+    # env variables
+    set -gx EDITOR hx
+    set -gx VISUAL $EDITOR
+    set -gx HELIX_RUNTIME /Users/intarga/etc/helix/runtime
+    set -gx CARGO_HOME /Users/intarga/.cargo
 end
