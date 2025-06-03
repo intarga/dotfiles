@@ -9,6 +9,9 @@ auto-completion = false
 completion-replace = true
 # end-of-line-diagnostics = "hint"
 
+[editor.lsp]
+display-progress-messages = true
+
 [editor.inline-diagnostics]
 cursor-line = "hint"
 # other-lines = "hint"
