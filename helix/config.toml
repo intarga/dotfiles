@@ -17,6 +17,12 @@ cursor-line = "hint"
 # other-lines = "hint"
 max-diagnostics = 1
 
+[editor.persistence]
+old-files = true
+commands = true
+search = true
+clipboard = true
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
