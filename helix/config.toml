@@ -6,6 +6,7 @@ color-modes = true
 idle-timeout = 0
 bufferline = "multiple"
 end-of-line-diagnostics = "hint"
+completion-replace = true
 
 [editor.inline-diagnostics]
 other-lines = "hint"
