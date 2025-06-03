@@ -5,12 +5,14 @@ line-number = "relative"
 color-modes = true
 idle-timeout = 0
 bufferline = "multiple"
-end-of-line-diagnostics = "hint"
 auto-completion = false
 completion-replace = true
+# end-of-line-diagnostics = "hint"
 
 [editor.inline-diagnostics]
-other-lines = "hint"
+cursor-line = "hint"
+# other-lines = "hint"
+max-diagnostics = 1
 
 [editor.cursor-shape]
 insert = "bar"
