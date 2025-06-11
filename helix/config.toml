@@ -7,15 +7,17 @@ idle-timeout = 0
 bufferline = "multiple"
 auto-completion = false
 completion-replace = true
-# end-of-line-diagnostics = "hint"
+# rulers = [80]
+end-of-line-diagnostics = "hint"
 
 [editor.lsp]
 display-progress-messages = true
 
 [editor.inline-diagnostics]
-cursor-line = "hint"
-# other-lines = "hint"
-max-diagnostics = 1
+# cursor-line = "hint"
+# # other-lines = "hint"
+# max-diagnostics = 1
+# max-wrap = 1
 
 [editor.persistence]
 old-files = true
@@ -60,3 +62,4 @@ newline = "·"
 
 [keys.normal."space"]
 q = ":buffer-close"
+# i = ":toggle"

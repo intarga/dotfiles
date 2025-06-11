@@ -91,9 +91,12 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
-$env.EDITOR = hx
+# $env.EDITOR = hx
+$env.HELIX_RUNTIME = "/Users/intarga/etc/helix/runtime"
+$env.EDITOR = "/Users/intarga/etc/helix/target/release/hx"
 $env.VISUAL = $env.EDITOR
-$env.LS_COLORS = (vivid generate ayu | str trim)
+
+$env.CARGO_HOME = ($env.HOME | path join ".cargo")
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
@@ -102,13 +105,22 @@ $env.LS_COLORS = (vivid generate ayu | str trim)
 use std "path add"
 # $env.PATH = ($env.PATH | split row (char esep))
 # path add /some/path
-# path add ($env.CARGO_HOME | path join "bin")
+path add ($env.CARGO_HOME | path join "bin")
 # path add ($env.HOME | path join ".local" "bin")
 # $env.PATH = ($env.PATH | uniq)
 path add ($env.HOME | path join ".local" "bin")
 path add ($env.HOME | path join "go" "bin")
 path add ($env.HOME | path join "toolchains" "bin")
+path add ($env.HOME | path join ".rye" "shims")
 path add /opt/homebrew/opt/postgresql@16/bin
+path add /opt/homebrew/bin
+
+$env.LS_COLORS = (vivid generate ayu | str trim)
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
+
+# carapace completion
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu

@@ -1,0 +1,92 @@
+# the lazy way to send commands
+map global normal <semicolon> :
+
+# buffer management
+map global normal q :db<ret>
+map global normal <tab> :bn<ret>
+map global normal <s-tab> :bp<ret>
+
+# select to line start/end
+map global normal h <a-h>
+map global normal l <a-l>
+
+# match bindings
+declare-user-mode match
+map global normal m ':enter-user-mode match<ret>' 
+map global match i <a-i> -docstring 'inside'
+map global match a <a-a> -docstring 'around'
+declare-user-mode match-surround
+map global match s ':enter-user-mode match-surround<ret>' -docstring 'surround'
+map global match-surround b 'i(<esc>a)<esc>' -docstring 'parentheses'
+map global match-surround r 'i[<esc>a]<esc>' -docstring 'square brackets'
+map global match-surround B 'i{<esc>a}<esc>' -docstring 'braces'
+map global match-surround a 'i<lt><esc>a<gt><esc>' -docstring 'angle brackets'
+map global match-surround <quote> 'i<quote><esc>a<quote><esc>' -docstring 'single quotes'
+map global match-surround <dquote> 'i<dquote><esc>a<dquote><esc>' -docstring 'double quotes'
+map global match n m -docstring 'go to next matching pair'
+map global match N m -docstring 'extend to next matching pair'
+map global match p m -docstring 'go to prev matching pair'
+map global match P m -docstring 'extend to prev matching pair'
+
+# use tab to navigate completions without breaking other tab usage
+hook global InsertCompletionShow .* %{
+    try %{
+        # this command temporarily removes cursors preceded by whitespace;
+        # if there are no cursors left, it raises an error, does not
+        # continue to execute the mapping commands, and the error is eaten
+        # by the `try` command so no warning appears.
+        #
+        # this is necessary to avoid breaking completions that start before
+        # you've actually typed anything
+        execute-keys -draft 'h<a-K>\h<ret>'
+        map window insert <tab> <c-n>
+        map window insert <s-tab> <c-p>
+        hook -once -always window InsertCompletionHide .* %{
+            unmap window insert <tab> <c-n>
+            unmap window insert <s-tab> <c-p>
+        }
+    }
+}
+
+# set cursor to underline in insert mode
+hook global InsertIdle .* %{
+    set-face window PrimaryCursor default,default+u
+    set-face window PrimaryCursorEol default,default+u
+    # set-face window SecondaryCursor default,default+u
+    # set-face window SecondaryCursorEol default,default+u
+    # set-face window LineNumberCursor default,default+u
+    # set-face window PrimarySelection default,default+u
+    # set-face window SecondarySelection default,default+u
+}
+hook global NormalIdle .* %{
+    set-face window PrimaryCursor default,default+r
+    set-face window PrimaryCursorEol default,default+r
+    # set-face window SecondaryCursor default,default+r
+    # set-face window SecondaryCursorEol default,default+r
+    # set-face window LineNumberCursor default,default+r
+    # set-face window PrimarySelection default,default+r
+    # set-face window SecondarySelection default,default+r
+}
+
+colorscheme catpuccin_latte
+
+# LSP (requires installing kakoune-lsp binary)
+eval %sh{kak-lsp}
+lsp-enable
+
+# LSP match mappings
+map global object a '<a-semicolon>lsp-object<ret>' -docstring 'LSP any symbol'
+map global object f '<a-semicolon>lsp-object Function Method<ret>' -docstring 'LSP function or method'
+map global object t '<a-semicolon>lsp-object Class Interface Struct<ret>' -docstring 'LSP class interface or struct'
+
+# other LSP mappings
+map global user k ':lsp-hover-buffer<ret>'
+map global user e ':lsp-diagnostics<ret>'
+
+# LSP curly underline diagnostics
+set-face global DiagnosticError default,default,red+c
+set-face global DiagnosticWarning default,default,yellow+c
+set-face global DiagnosticHint default,default,yellow+c
+
+# LSP disable diagnostic flags in gutter
+lsp-diagnostic-lines-disable global
