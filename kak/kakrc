@@ -48,27 +48,20 @@ hook global InsertCompletionShow .* %{
     }
 }
 
+# tree-sitter (requires installing kak-tree-sitter and ktsctl binaries)
+# once you have the binaries installed, you also need to load grammars
+# with `ktsctl sync <language>`
+eval %sh{ kak-tree-sitter -dks --init $kak_session }
+
+colorscheme tatami
+
 # set cursor to underline in insert mode
 hook global InsertIdle .* %{
-    set-face window PrimaryCursor default,default+u
-    set-face window PrimaryCursorEol default,default+u
-    # set-face window SecondaryCursor default,default+u
-    # set-face window SecondaryCursorEol default,default+u
-    # set-face window LineNumberCursor default,default+u
-    # set-face window PrimarySelection default,default+u
-    # set-face window SecondarySelection default,default+u
+    set-face window PrimaryCursor PrimaryCursorIns
 }
 hook global NormalIdle .* %{
-    set-face window PrimaryCursor default,default+r
-    set-face window PrimaryCursorEol default,default+r
-    # set-face window SecondaryCursor default,default+r
-    # set-face window SecondaryCursorEol default,default+r
-    # set-face window LineNumberCursor default,default+r
-    # set-face window PrimarySelection default,default+r
-    # set-face window SecondarySelection default,default+r
+    set-face window PrimaryCursor PrimaryCursorNor
 }
-
-colorscheme catpuccin_latte
 
 # LSP (requires installing kakoune-lsp binary)
 eval %sh{kak-lsp}
