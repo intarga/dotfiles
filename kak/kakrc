@@ -68,11 +68,13 @@ hook global ModeChange .*:.*:(.*) %{
 hook global ModeChange .*:.*:insert %{
     # set cursor to underline in insert mode
     set-face window PrimaryCursor PrimaryCursorIns
+    set-face window PrimaryCursorEol PrimaryCursorEolIns
     set-face window StatusLineMode StatusLineModeIns
     set-face window StatusLineInfo StatusLineInfoIns
 }
 hook global ModeChange .*:.*:(?!insert).* %{
     set-face window PrimaryCursor PrimaryCursorNor
+    set-face window PrimaryCursorEol PrimaryCursorEolNor
     set-face window StatusLineMode StatusLineModeNor
     set-face window StatusLineInfo StatusLineInfoNor
 }
