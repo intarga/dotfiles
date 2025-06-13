@@ -55,12 +55,26 @@ eval %sh{ kak-tree-sitter -dks --init $kak_session }
 
 colorscheme tatami
 
-# set cursor to underline in insert mode
-hook global InsertIdle .* %{
-    set-face window PrimaryCursor PrimaryCursorIns
+# modeline
+declare-option str current_mode 'normal'
+set global modelinefmt '%val{bufname} %val{cursor_line}:%val{cursor_char_column} /%val{buf_line_count} {{context_info}}{StatusLineInfo} %val{selection_count} {StatusLineMode} %opt{current_mode} '
+
+# hooks to change faces based on whether insert mode is active
+# regexp captures last part of hook param, which represents the new mode
+hook global ModeChange .*:.*:(.*) %{
+    # record mode name for use in modeline
+    set-option window current_mode %val{hook_param_capture_1}
 }
-hook global NormalIdle .* %{
+hook global ModeChange .*:.*:insert %{
+    # set cursor to underline in insert mode
+    set-face window PrimaryCursor PrimaryCursorIns
+    set-face window StatusLineMode StatusLineModeIns
+    set-face window StatusLineInfo StatusLineInfoIns
+}
+hook global ModeChange .*:.*:(?!insert).* %{
     set-face window PrimaryCursor PrimaryCursorNor
+    set-face window StatusLineMode StatusLineModeNor
+    set-face window StatusLineInfo StatusLineInfoNor
 }
 
 # LSP (requires installing kakoune-lsp binary)
