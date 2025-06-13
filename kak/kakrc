@@ -119,3 +119,6 @@ define-command -hidden -override lsp-handle-progress -params 6 -docstring %{
 declare-option str current_mode 'normal'
 set global modelinefmt '{StatusLineValue}%opt{lsp_modeline_progress}{StatusLine} %val{bufname} %val{cursor_line}:%val{cursor_char_column} /%val{buf_line_count} {{context_info}}{StatusLineInfo} %val{selection_count} {StatusLineMode} %opt{current_mode} '
 
+# disable mirroring of modeline to terminal title
+set-option -add global ui_options terminal_set_title=false
+
