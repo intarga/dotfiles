@@ -58,7 +58,7 @@ set-face global StatusLineMode      StatusLineModeNor
 set-face global StatusLineInfoNor   "%opt{bg},%opt{dark_yellow}"
 set-face global StatusLineInfoIns   "%opt{bg},%opt{blue}"
 set-face global StatusLineInfo      StatusLineInfoNor
-set-face global StatusLineValue     "%opt{bg},%opt{blue}"
+set-face global StatusLineValue     "%opt{alt_fg},%opt{soft_bg}+i"
 set-face global StatusCursor        "%opt{bg},%opt{fg}"
 set-face global Prompt              "%opt{blue},%opt{soft_bg}+b"
 set-face global MatchingChar        "%opt{cyan},%opt{soft_bg}"
