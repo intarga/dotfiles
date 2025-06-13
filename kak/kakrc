@@ -48,6 +48,9 @@ hook global InsertCompletionShow .* %{
     }
 }
 
+# soft wrap
+addhl global/ wrap -marker '↪ '
+
 # tree-sitter (requires installing kak-tree-sitter and ktsctl binaries)
 # once you have the binaries installed, you also need to load grammars
 # with `ktsctl sync <language>`

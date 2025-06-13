@@ -62,7 +62,7 @@ set-face global StatusLineValue     "%opt{alt_fg},%opt{soft_bg}+i"
 set-face global StatusCursor        "%opt{bg},%opt{fg}"
 set-face global Prompt              "%opt{blue},%opt{soft_bg}+b"
 set-face global MatchingChar        "%opt{cyan},%opt{soft_bg}"
-set-face global Whitespace          "%opt{soft_fg},%opt{bg}+f"
+set-face global Whitespace          "%opt{alt_fg},%opt{bg}+bi"
 set-face global WrapMarker          Whitespace
 set-face global BufferPadding       "%opt{alt_fg},%opt{bg}"
 
