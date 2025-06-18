@@ -1,0 +1,6 @@
+[user]
+name = "Ingrid Abraham"
+email = "git@ingrids.email"
+
+[ui]
+default-command = "log"
