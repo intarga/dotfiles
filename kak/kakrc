@@ -28,33 +28,8 @@ map global match N m -docstring 'extend to next matching pair'
 map global match p m -docstring 'go to prev matching pair'
 map global match P m -docstring 'extend to prev matching pair'
 
-# use tab to navigate completions without breaking other tab usage
-hook global InsertCompletionShow .* %{
-    try %{
-        # this command temporarily removes cursors preceded by whitespace;
-        # if there are no cursors left, it raises an error, does not
-        # continue to execute the mapping commands, and the error is eaten
-        # by the `try` command so no warning appears.
-        #
-        # this is necessary to avoid breaking completions that start before
-        # you've actually typed anything
-        execute-keys -draft 'h<a-K>\h<ret>'
-        map window insert <tab> <c-n>
-        map window insert <s-tab> <c-p>
-        hook -once -always window InsertCompletionHide .* %{
-            unmap window insert <tab> <c-n>
-            unmap window insert <s-tab> <c-p>
-        }
-    }
-}
-
 # soft wrap
 addhl global/ wrap -marker '↪ '
-
-# tree-sitter (requires installing kak-tree-sitter and ktsctl binaries)
-# once you have the binaries installed, you also need to load grammars
-# with `ktsctl sync <language>`
-eval %sh{ kak-tree-sitter -dks --init $kak_session }
 
 colorscheme tatami
 
@@ -78,53 +53,24 @@ hook global ModeChange .*:.*:(?!insert).* %{
     set-face window StatusLineInfo StatusLineInfoNor
 }
 
-# LSP (requires installing kakoune-lsp binary)
-eval %sh{kak-lsp}
-lsp-enable
-
 # LSP match mappings
 map global object a '<a-semicolon>lsp-object<ret>' -docstring 'LSP any symbol'
 map global object f '<a-semicolon>lsp-object Function Method<ret>' -docstring 'LSP function or method'
 map global object t '<a-semicolon>lsp-object Class Interface Struct<ret>' -docstring 'LSP class interface or struct'
 
 # other LSP mappings
-map global user k ':lsp-hover-buffer<ret>'
+map global insert <s-ret> '<a-;>:try lsp-snippets-select-next-placeholders catch %{ execute-keys -with-hooks <lt>tab> }<ret>' -docstring 'Select next snippet placeholder'
+map global user k ':lsp-hover<ret>'
+map global user b ':lsp-hover-buffer<ret>'
 map global user e ':lsp-diagnostics<ret>'
 
-# LSP curly underline diagnostics
-set-face global DiagnosticError default,default,red+c
-set-face global DiagnosticWarning default,default,yellow+c
-set-face global DiagnosticHint default,default,yellow+c
+# LSP format on write
+hook global BufWritePre .*\.rs lsp-formatting
 
-# LSP disable diagnostic flags in gutter
-lsp-diagnostic-lines-disable global
-
-# remove lsp code action indicator in modeline
-set-option global lsp_auto_show_code_actions false
-
-# override lsp modeline progress to show message, and change icon to a symbol not emoji
-define-command -hidden -override lsp-handle-progress -params 6 -docstring %{
-  lsp-handle-progress <token> <title> <cancelable> <message> <percentage> <done>
-  Handle progress messages sent from the language server. Override to handle this.
-} %{
-    set-option global lsp_modeline_progress %sh{
-        if ! "$6"; then
-            #echo ""$kak_opt_lsp_progress_indicator""
-            # More verbose alternative that shows what the server is working on.  Dont show this in
-            # the modeline by default because the modeline is part of the terminal title; changing
-            # that too quickly can be noisy.
-            echo "$2${5:+" ($5%)"}${4:+": $4"} ⏳"
-        fi
-    }
-}
-
-# modeline - needs to be down here otherwise kak-lsp will tamper with it :(
+# modeline - needs to be set after kak-lsp loads because that tampers with it :(
 declare-option str current_mode 'normal'
 set global modelinefmt '{StatusLineValue}%opt{lsp_modeline_progress}{StatusLine} %val{bufname} %val{cursor_line}:%val{cursor_char_column} /%val{buf_line_count} {{context_info}}{StatusLineInfo} %val{selection_count} {StatusLineMode} %opt{current_mode} '
 
 # disable mirroring of modeline to terminal title
 set-option -add global ui_options terminal_set_title=false
 
-define-command find -docstring "fuzzy-find files" -params 1 %{ edit %arg{1} }
-complete-command find shell-script-candidates %{ find . -type f }
-map global user f :find<space> -docstring 'fuzzy-find files'
